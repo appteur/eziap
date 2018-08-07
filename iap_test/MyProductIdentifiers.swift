@@ -41,6 +41,7 @@ enum MyProductIds: ProductIdentifier {
         case one.value: return MyProductIds.one
         case two.value: return MyProductIds.two
         case three.value: return MyProductIds.three
+        case all.value: return MyProductIds.all
         default: return nil
         }
     }

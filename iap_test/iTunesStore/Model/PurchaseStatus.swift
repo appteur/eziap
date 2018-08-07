@@ -18,10 +18,10 @@ enum PurchaseState {
 
 
 class PurchaseStatus {
-    var state:PurchaseState
-    var error:Error?
-    var transaction:SKPaymentTransaction?
-    var message:String
+    var state: PurchaseState
+    var error: Error?
+    var transaction: SKPaymentTransaction?
+    var message: String
     
     init(state:PurchaseState, error:Error?, transaction:SKPaymentTransaction?, message:String) {
         self.state = state

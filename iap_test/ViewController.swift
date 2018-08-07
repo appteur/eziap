@@ -39,4 +39,8 @@ class ViewController: UIViewController {
         store.purchaseProduct(MyProductIds.all)
     }
 
+    @IBAction func actionRestorePurchases(_ sender: Any) {
+        print("Restore purchases tapped...")
+        store.restorePurchases()
+    }
 }

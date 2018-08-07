@@ -27,17 +27,17 @@ class IAPObserver: NSObject, SKPaymentTransactionObserver {
                 
                 case .purchased:    // Transaction is in queue, user has been charged. Complete transaction now
                     // Notify purchase complete status
-                    delegate?.purchaseStatusDidUpdate(PurchaseStatus.init(state: .complete, error: nil, transaction: transaction, message:"Purchase Complete."))
+                    delegate?.purchaseStatusDidUpdate(PurchaseStatus.init(state: .complete, error: nil, transaction: transaction, message: "Purchase Complete."))
                     SKPaymentQueue.default().finishTransaction(transaction)
                 
                 case .failed:   // Transaction was cancelled or failed before being added to the server queue
                         // An error occured, notify
-                    delegate?.purchaseStatusDidUpdate(PurchaseStatus.init(state: .failed, error: transaction.error, transaction: transaction, message:"An error occured."))
+                    delegate?.purchaseStatusDidUpdate(PurchaseStatus.init(state: .failed, error: transaction.error, transaction: transaction, message: "An error occured."))
                     SKPaymentQueue.default().finishTransaction(transaction)
                 
                 case .restored: // transaction was rewtored from the users purchase history. Complete transaction now.
                     // notify purchase completed with status... success
-                    delegate?.restoreStatusDidUpdate(PurchaseStatus.init(state: .complete, error: nil, transaction: transaction, message:"Restore Success!"))
+                    delegate?.restoreStatusDidUpdate(PurchaseStatus.init(state: .complete, error: nil, transaction: transaction, message: "Restore Success!"))
                     SKPaymentQueue.default().finishTransaction(transaction)
                     
                 case .deferred: // transaction is in the queue, but it's final status is pending user/external action
