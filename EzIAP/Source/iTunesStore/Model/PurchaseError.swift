@@ -7,8 +7,13 @@
 
 import Foundation
 
+/// Encapsulates errors that might be encountered during the purchasing process.
 public enum PurchaseError: Error {
+    
+    // the requested product was not found when trying to initiate a purchase
     case productNotFound
+    
+    // a purchase error occured during the purchase process
     case unableToPurchase
     
     public var code: Int {
