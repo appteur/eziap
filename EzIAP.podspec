@@ -12,7 +12,6 @@ Pod::Spec.new do |s|
   
   s.source 		 = { :git => 'https://github.com/appteur/eziap.git', :tag => "#{s.version}" }
   s.source_files = 'EzIAP/*.{h,m,swift}', 'EzIAP/**/*.{h,m,swift}'
-  s.resources = 'EzIAP/*.{storyboard,xib,xcassets}'
   
 end
   

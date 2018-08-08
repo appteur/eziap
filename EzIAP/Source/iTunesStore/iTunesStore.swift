@@ -8,7 +8,29 @@
 import Foundation
 import StoreKit
 
-/// This is the main class for communicating and initiating purchase and restore requests to iTunesConnect.
+/// This class provides the main interface for communicating with iTunesConnect/AppStoreConnect.
+///
+/// It provides functionality to:
+///   * Validate products, aka verifying the products are setup and available to purchase in the App Store.
+///   * Purchase products.
+///   * Restore previously purchased products.
+///
+/// ### Usage Notes
+/// An instance of this class can be used standalone in any of your classes if desired for maximum flexibility.
+/// However, it is designed to be used from an object conforming to the `Store` protocol. Using it in this way gives you some default behaviors for free and allows simpler integration with your local product models.
+///
+/// A default implementation of the Store protocol is included in this framework. (See the `GeneralStore` class).
+///
+/// A class using an instance of iTunesStore should set itself as the delegate.
+/// Doing so will allow you to receive callbacks regarding:
+///   * The status of product validation requests.
+///   * Notification of any invalid products.
+///   * The status of current purchase transactions.
+///   * The status of current restore requests.
+///
+/// For example implementations & use cases look at:
+///   * GeneralStore class included in this framework.
+///   * DemoStore class included in the accompanying sample application.
 open class iTunesStore: NSObject, SKProductsRequestDelegate {
     
     /// This delegate will receive status updates during any purchase/restore actions
@@ -23,10 +45,6 @@ open class iTunesStore: NSObject, SKProductsRequestDelegate {
     /// List of invalid product identifiers. Populated during the product validation phase.
     internal var invalidProductIDs: [String] = []
     
-    deinit {
-        SKPaymentQueue.default().remove(self.transactionObserver)
-    }
-    
     public override init() {
         super.init()
         transactionObserver.delegate = self
@@ -36,7 +54,7 @@ open class iTunesStore: NSObject, SKProductsRequestDelegate {
     /// See extension at bottom of file for request callback implementation.
     ///
     /// - Parameter identifiers: A Set of product identifiers to validate with the App Store.
-    func fetchStoreProducts(identifiers: Set<String>) {
+    func validateProducts(identifiers: Set<String>) {
         print("Validating products: \(identifiers)")
         let request:SKProductsRequest = SKProductsRequest.init(productIdentifiers: identifiers)
         request.delegate = self
@@ -45,7 +63,7 @@ open class iTunesStore: NSObject, SKProductsRequestDelegate {
     
     /// Call to initiate purchase process for specified product identifier. The product identifier is validated against the products received during product validation when the class is setup.
     ///
-    /// - Parameter identifier: <#identifier description#>
+    /// - Parameter identifier: The identifier of the product to be purchased.
     public func purchaseProduct(identifier:String) {
         
         // validate that the requested product identifier exists in our 'products' array

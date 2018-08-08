@@ -9,7 +9,8 @@
 import Foundation
 import StoreKit
 
-/// Discreet states that an in app purchase transaction can be in during processing.
+/// An enumeration of discreet states a purchase transaction can be in during processing.
+/// Used in status update callbacks from the iTunesStore class during purchase or restore operations.
 ///
 /// - initiated: Transaction was just initiated and is starting to be processed.
 /// - complete: Transaction has completed successfully.
@@ -22,19 +23,19 @@ public enum PurchaseState {
     case failed
 }
 
-/// Encapsulates transaction status for updating the app during the purchase process.
+/// This class encapsulates transaction status values for updating the app during the purchase process via callbacks.
 open class PurchaseStatus {
     
-    // the current state of the transaction
+    /// The current state of the transaction.
     public var state: PurchaseState
     
-    // if an error was triggered this property will be set
+    /// Set if an error was triggered, else nil.
     public var error: Error?
     
-    // the corresponding SKPaymentTransaction for the users purchase request
+    /// A reference to the corresponding SKPaymentTransaction for the users purchase request
     public var transaction: SKPaymentTransaction?
     
-    // a display message for the current status
+    /// A user friendly message for the current transaction status.
     public var message: String
     
     public init(state:PurchaseState, error:Error?, transaction:SKPaymentTransaction?, message:String) {

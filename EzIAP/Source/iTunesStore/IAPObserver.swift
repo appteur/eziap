@@ -9,18 +9,31 @@
 import Foundation
 import StoreKit
 
-/// Encapsulates transaction observer behaviors.
+/**
+ This class encapsulates transaction observer behaviors and provides status updates to the iTunesStore class for significant changes to transaction state.
+ 
+ It is not designed to be used outside the framework. It should not need to be modified and should only be used by the iTunesStore class.
+ 
+ */
 class IAPObserver: NSObject, SKPaymentTransactionObserver {
     
-    /// Delegate for propagating status updates up the receiver chain.
+    /// This delegate will receive status updates for significant transaction changes.
     weak var delegate: iTunesPurchaseStatusReceiver?
     
     override init() {
         super.init()
+        
+        // add self as a listener/observer on the SKPaymentQueue
         SKPaymentQueue.default().add(self)
     }
     
-    /// Observer function. Handles notifying the delegate of status changes for transactions and finishing transactions when required.
+    deinit {
+        // remove self as a listener/observer from the SKPaymentQueue
+        SKPaymentQueue.default().remove(self)
+    }
+    
+    /// This is a callback from the SKPaymentQueue.
+    /// It handles notifying the delegate of status changes for transactions and finishing transactions when required.
     ///
     /// - Parameters:
     ///   - queue: The active SKPaymentQueue for processing transactions.
@@ -62,7 +75,8 @@ class IAPObserver: NSObject, SKPaymentTransactionObserver {
         }
     }
     
-    /// Handler for restore. We only call 'finishTransaction' here as 'updatedTransactions' function above is called during the restore process and delegate calls are handled there.
+    /// This is a callback from the SKPaymentQueue.
+    /// It provides handling for restore purchase requests. We only call 'finishTransaction' here as 'updatedTransactions' function above is called during the restore process and delegate calls are handled there.
     ///
     /// - Parameter queue: The SKPaymentQueue handling the transactions.
     func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
@@ -86,7 +100,8 @@ class IAPObserver: NSObject, SKPaymentTransactionObserver {
         }
     }
     
-    /// Failure delegate call for the restore process. Notifies delegate with updated state.
+    /// This is a callback from the SKPaymentQueue.
+    /// It is the failure delegate call for the restore purchases process and notifies the delegate of the status change.
     ///
     /// - Parameters:
     ///   - queue: The SKPaymentQueue handling the transactions.

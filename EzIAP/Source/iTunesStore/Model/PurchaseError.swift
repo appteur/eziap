@@ -7,15 +7,18 @@
 
 import Foundation
 
-/// Encapsulates errors that might be encountered during the purchasing process.
+/**
+ This enum encapsulates errors that might be encountered during the purchasing process.
+ */
 public enum PurchaseError: Error {
     
-    // the requested product was not found when trying to initiate a purchase
+    /// The requested product was not found when trying to initiate a purchase or restore purchases.
     case productNotFound
     
-    // a purchase error occured during the purchase process
+    /// A generic purchase error occured during the purchase process
     case unableToPurchase
     
+    /// An error code to associate with the error.
     public var code: Int {
         switch self {
         case .productNotFound:
@@ -26,6 +29,7 @@ public enum PurchaseError: Error {
         }
     }
     
+    /// A user friendly error description.
     public var description: String {
         switch self {
         case .productNotFound:
@@ -35,6 +39,7 @@ public enum PurchaseError: Error {
         }
     }
     
+    /// A user friendly title for the error.
     public var title: String {
         switch self {
         case .productNotFound:
@@ -44,10 +49,12 @@ public enum PurchaseError: Error {
         }
     }
     
+    /// The error domain.
     public var domain: String {
         return "com.aii.purchaseError"
     }
     
+    /// A recovery suggestion for the error.
     public var recoverySuggestion: String {
         switch self {
         case .productNotFound:
