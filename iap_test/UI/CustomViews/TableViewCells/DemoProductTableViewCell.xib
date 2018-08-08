@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DemoProductTableViewCell" customModule="iap_test" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings" translatesAutoresizingMaskIntoConstraints="NO" id="iPA-hc-qan">
+                    <rect key="frame" x="16" y="15" width="90" height="90"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="aXm-1w-IPr"/>
+                        <constraint firstAttribute="height" constant="90" id="vae-TZ-z93"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzJ-9n-cGS">
+                    <rect key="frame" x="114" y="15" width="245" height="27.5"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="44h-KN-bVL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bV-SD-e7I">
+                    <rect key="frame" x="114" y="50.5" width="245" height="54.5"/>
+                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="iPA-hc-qan" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="15" id="1gx-h8-7eE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="iPA-hc-qan" secondAttribute="bottom" constant="15" id="G1D-Zd-RJd"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="EzJ-9n-cGS" secondAttribute="trailing" constant="16" id="LWg-Xd-nP9"/>
+                <constraint firstItem="5bV-SD-e7I" firstAttribute="top" secondItem="EzJ-9n-cGS" secondAttribute="bottom" constant="8" id="NH8-aL-niG"/>
+                <constraint firstItem="5bV-SD-e7I" firstAttribute="bottom" secondItem="iPA-hc-qan" secondAttribute="bottom" id="O9Z-BH-9fw"/>
+                <constraint firstItem="EzJ-9n-cGS" firstAttribute="leading" secondItem="iPA-hc-qan" secondAttribute="trailing" constant="8" id="XHd-EW-sYG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5bV-SD-e7I" secondAttribute="trailing" constant="16" id="e8H-ax-ke5"/>
+                <constraint firstItem="iPA-hc-qan" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="eQm-1C-O8g"/>
+                <constraint firstItem="5bV-SD-e7I" firstAttribute="leading" secondItem="iPA-hc-qan" secondAttribute="trailing" constant="8" id="jUq-Oz-JSH"/>
+                <constraint firstItem="EzJ-9n-cGS" firstAttribute="top" secondItem="iPA-hc-qan" secondAttribute="top" id="rMD-CG-JQ5"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="heroImage" destination="iPA-hc-qan" id="MfZ-pe-fb6"/>
+                <outlet property="subtitleLabel" destination="5bV-SD-e7I" id="3qs-wI-1Wu"/>
+                <outlet property="titleLabel" destination="EzJ-9n-cGS" id="TbT-qx-TPG"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="-220"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="settings" width="512" height="512"/>
+    </resources>
+</document>

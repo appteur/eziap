@@ -1,0 +1,39 @@
+[
+	{
+		"identifier": "com.myapp.dynamic.1",
+		"name": "Dynamic Product 1",
+		"price": 1.99
+	},{
+		"identifier": "com.myapp.dynamic.2",
+		"name": "Dynamic Product 2",
+		"price": 2.99
+	},{
+		"identifier": "com.myapp.dynamic.3",
+		"name": "Dynamic Product 3",
+		"price": 3.99
+	},{
+		"identifier": "com.myapp.dynamic.4",
+		"name": "Dynamic Product 4",
+		"price": 4.99
+	},{
+		"identifier": "com.myapp.dynamic.5",
+		"name": "Dynamic Product 5",
+		"price": 5.99
+	},{
+		"identifier": "com.myapp.dynamic.6",
+		"name": "Dynamic Product 6",
+		"price": 6.99
+	},{
+		"identifier": "com.myapp.dynamic.7",
+		"name": "Dynamic Product 7",
+		"price": 7.99
+	},{
+		"identifier": "com.myapp.dynamic.8",
+		"name": "Dynamic Product 8",
+		"price": 8.99
+	},{
+		"identifier": "com.myapp.dynamic.9",
+		"name": "Dynamic Product 9",
+		"price": 9.99
+	}
+]
