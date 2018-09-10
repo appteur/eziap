@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D1D1E7E2146E959003A3883 /* EZIAPReceiptValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D1E7D2146E959003A3883 /* EZIAPReceiptValidationResponse.swift */; };
+		5D1D1E802146FA40003A3883 /* EZIAPReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D1E7F2146FA40003A3883 /* EZIAPReceipt.swift */; };
+		5D1D1E822146FA5A003A3883 /* EZIAPLatestReceiptInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D1E812146FA5A003A3883 /* EZIAPLatestReceiptInfo.swift */; };
 		5DDC5AFB211A21310061A0C6 /* DynamicProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDC5AFA211A21310061A0C6 /* DynamicProductsViewModel.swift */; };
 		5DDC5AFE211A22590061A0C6 /* MyProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDC5AFD211A22590061A0C6 /* MyProduct.swift */; };
 		5DDC5B01211A2B140061A0C6 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDC5B00211A2B140061A0C6 /* Product.swift */; };
@@ -36,6 +39,7 @@
 		5DDC5B4E211A54A20061A0C6 /* iTunesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F6AAE2116116B00F1010B /* iTunesStore.swift */; };
 		5DDC5B4F211A54A60061A0C6 /* IAPObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F6AAC2116116B00F1010B /* IAPObserver.swift */; };
 		5DDC5BA5211A71760061A0C6 /* GeneralStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDC5BA4211A71760061A0C6 /* GeneralStore.swift */; };
+		E15AA2642145AEAD00D5AB26 /* ReceiptValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15AA2632145AEAD00D5AB26 /* ReceiptValidator.swift */; };
 		E17F6A9A2116115A00F1010B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F6A992116115A00F1010B /* AppDelegate.swift */; };
 		E17F6A9C2116115A00F1010B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F6A9B2116115A00F1010B /* HomeViewController.swift */; };
 		E17F6A9F2116115A00F1010B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17F6A9D2116115A00F1010B /* Main.storyboard */; };
@@ -83,6 +87,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5D1D1E7D2146E959003A3883 /* EZIAPReceiptValidationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EZIAPReceiptValidationResponse.swift; sourceTree = "<group>"; };
+		5D1D1E7F2146FA40003A3883 /* EZIAPReceipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EZIAPReceipt.swift; sourceTree = "<group>"; };
+		5D1D1E812146FA5A003A3883 /* EZIAPLatestReceiptInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EZIAPLatestReceiptInfo.swift; sourceTree = "<group>"; };
 		5DDC5AEF211A184F0061A0C6 /* ItcProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItcProduct.swift; sourceTree = "<group>"; };
 		5DDC5AFA211A21310061A0C6 /* DynamicProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicProductsViewModel.swift; sourceTree = "<group>"; };
 		5DDC5AFD211A22590061A0C6 /* MyProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProduct.swift; sourceTree = "<group>"; };
@@ -107,6 +114,7 @@
 		5DDC5B3A211A546A0061A0C6 /* EzIAPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EzIAPTests.swift; sourceTree = "<group>"; };
 		5DDC5B3C211A546A0061A0C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DDC5BA4211A71760061A0C6 /* GeneralStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralStore.swift; sourceTree = "<group>"; };
+		E15AA2632145AEAD00D5AB26 /* ReceiptValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptValidator.swift; sourceTree = "<group>"; };
 		E17F6A962116115A00F1010B /* iap_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iap_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E17F6A992116115A00F1010B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E17F6A9B2116115A00F1010B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -310,6 +318,13 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		E15AA2622145A35000D5AB26 /* AppStoreService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AppStoreService;
+			sourceTree = "<group>";
+		};
 		E17F6A8D2116115A00F1010B = {
 			isa = PBXGroup;
 			children = (
@@ -333,6 +348,7 @@
 		E17F6A982116115A00F1010B /* iap_test */ = {
 			isa = PBXGroup;
 			children = (
+				E15AA2622145A35000D5AB26 /* AppStoreService */,
 				5DDC5AEB211A18260061A0C6 /* DemoStore */,
 				5DDC5B1C211A43240061A0C6 /* Extensions */,
 				5DDC5B02211A2B930061A0C6 /* FauxAPI */,
@@ -355,6 +371,7 @@
 				E17F6AAE2116116B00F1010B /* iTunesStore.swift */,
 				E17F6AB92116C1B800F1010B /* Protocols */,
 				E17F6AB82116C1A300F1010B /* Model */,
+				E15AA2632145AEAD00D5AB26 /* ReceiptValidator.swift */,
 			);
 			path = iTunesStore;
 			sourceTree = "<group>";
@@ -362,6 +379,9 @@
 		E17F6AB82116C1A300F1010B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5D1D1E7D2146E959003A3883 /* EZIAPReceiptValidationResponse.swift */,
+				5D1D1E812146FA5A003A3883 /* EZIAPLatestReceiptInfo.swift */,
+				5D1D1E7F2146FA40003A3883 /* EZIAPReceipt.swift */,
 				E17F6AB22116117800F1010B /* PurchaseStatus.swift */,
 				E17F6AB6211614E800F1010B /* PurchaseError.swift */,
 			);
@@ -526,11 +546,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DDC5B4D211A549E0061A0C6 /* iTunesStatusUpdateReceiver.swift in Sources */,
+				5D1D1E7E2146E959003A3883 /* EZIAPReceiptValidationResponse.swift in Sources */,
 				5DDC5B4F211A54A60061A0C6 /* IAPObserver.swift in Sources */,
 				5DDC5B4C211A549A0061A0C6 /* ItcProduct.swift in Sources */,
+				5D1D1E802146FA40003A3883 /* EZIAPReceipt.swift in Sources */,
 				5DDC5B4B211A54970061A0C6 /* Store.swift in Sources */,
+				E15AA2642145AEAD00D5AB26 /* ReceiptValidator.swift in Sources */,
 				5DDC5B4A211A54930061A0C6 /* PurchaseStatus.swift in Sources */,
 				5DDC5B49211A54900061A0C6 /* PurchaseError.swift in Sources */,
+				5D1D1E822146FA5A003A3883 /* EZIAPLatestReceiptInfo.swift in Sources */,
 				5DDC5B4E211A54A20061A0C6 /* iTunesStore.swift in Sources */,
 				5DDC5BA5211A71760061A0C6 /* GeneralStore.swift in Sources */,
 			);
