@@ -11,11 +11,13 @@ import Foundation
 public class EZIAPReceiptValidationResponse: Codable {
     var status: Int16?
     var receipt: EZIAPReceipt?
-    var latestReceipt: EZIAPLatestReceiptInfo?
+    var latestReceipt: String?
+    var latestReceiptInfo: [EZIAPLatestReceiptInfo]?
+//    var pendingRenewalInfo
     
     enum CodingKeys: String, CodingKey {
         case status
         case receipt
-        case latestReceipt = "latest_receipt_info"
+        case latestReceiptInfo = "latest_receipt_info"
     }
 }

@@ -23,7 +23,8 @@ public class EZIAPLatestReceiptInfo: Codable {
     var expiresDateMs: String?
     var expiresDatePst: Date?
     var webOrderLineItemId: String?
-    var isTrialPeriod: Bool?
+    var isTrialPeriod: String?
+    var isInIntroOfferPeriod: String?
     
     enum CodingKeys: String, CodingKey {
         case quantity
@@ -41,6 +42,7 @@ public class EZIAPLatestReceiptInfo: Codable {
         case expiresDatePst = "expires_date_pst"
         case webOrderLineItemId = "web_order_line_item_id"
         case isTrialPeriod = "is_trial_period"
+        case isInIntroOfferPeriod = "is_in_intro_offer_period"
     }
 }
 

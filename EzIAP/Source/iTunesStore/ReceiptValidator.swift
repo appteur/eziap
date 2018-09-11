@@ -60,7 +60,7 @@ public class EZIAPReceiptValidator {
     /// the shared secret you setup in AppStoreConnect
     var accountSecret: String
     
-    var logResponse: Bool = false
+    var logResponse: Bool = true
     let liveUrl = "https://buy.itunes.apple.com/verifyReceipt"
     let sandboxUrl = "https://sandbox.itunes.apple.com/verifyReceipt"
     
@@ -120,7 +120,7 @@ public class EZIAPReceiptValidator {
     
     private func logData(jsonData: Data?) {
         
-        guard logResponse else {
+        guard logResponse == true else {
             return
         }
         
