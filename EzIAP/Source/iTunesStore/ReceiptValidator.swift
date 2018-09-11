@@ -57,14 +57,19 @@ public func ==(lhs: EZIAPReceiptValidationError, rhs: EZIAPReceiptValidationErro
 
 public class EZIAPReceiptValidator {
     
-    var itcAccountSecret: String = ""
+    /// the shared secret you setup in AppStoreConnect
+    var accountSecret: String
     
     var logResponse: Bool = false
     let liveUrl = "https://buy.itunes.apple.com/verifyReceipt"
     let sandboxUrl = "https://sandbox.itunes.apple.com/verifyReceipt"
     
+    public init(secret: String) {
+        accountSecret = secret
+    }
     
     public func validateReceipt(completion: @escaping (EZIAPReceiptValidationResponse?, Error?) -> Void) {
+        print("\(self) Validating receipt")
         
         guard let data = loadReceipt() else {
             completion(nil, EZIAPReceiptValidationError.receiptLoadError)
@@ -73,7 +78,7 @@ public class EZIAPReceiptValidator {
         
         let body = [
             "receipt-data": data.base64EncodedString(),
-            "password": itcAccountSecret
+            "password": accountSecret
         ]
         let bodyData = try! JSONSerialization.data(withJSONObject: body, options: [])
         
@@ -84,7 +89,7 @@ public class EZIAPReceiptValidator {
         
         let task = URLSession.shared.dataTask(with: request) { (responseData, response, error) in
             guard error == nil, let responseData = responseData else {
-                print("🚫 EZIAP Receipt Validation Failed: \(String(describing: error))")
+                print("\(self) 🚫 Receipt Validation Failed: \n\(String(describing: error))\n")
                 completion(nil, error)
                 return
             }
@@ -105,7 +110,7 @@ public class EZIAPReceiptValidator {
                 }
                 
             } catch {
-                print("🚫 EZIAP Receipt Validation Failed: \(error)")
+                print("\(self) 🚫 Receipt Validation Failed: \(error)")
                 completion(nil, error)
             }
         }
@@ -120,13 +125,13 @@ public class EZIAPReceiptValidator {
         }
         
         guard let jsonData = jsonData, let json = try? JSONSerialization.jsonObject(with: jsonData, options: []) else {
-            print("Unable to parse json response to log... bailing")
+            print("\(self) Unable to parse json response to log... bailing")
             return
         }
         
-        print("EZIAP - BEGIN --- Receipt Validation Response - BEGIN ---")
+        print("\(self) - BEGIN --- Receipt Validation Response - BEGIN ---")
         print(json)
-        print("EZIAP --- END --- Receipt Validation Response --- END ---")
+        print("\(self) --- END --- Receipt Validation Response --- END ---")
     }
     
     private func loadReceipt() -> Data? {
@@ -138,7 +143,7 @@ public class EZIAPReceiptValidator {
             let data = try Data(contentsOf: url)
             return data
         } catch {
-            print("Error loading receipt data: \(error.localizedDescription)")
+            print("\(self) Error loading receipt data: \(error.localizedDescription)")
             return nil
         }
     }
