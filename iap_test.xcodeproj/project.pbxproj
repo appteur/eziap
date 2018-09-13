@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D1D1E7E2146E959003A3883 /* EZIAPReceiptValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D1E7D2146E959003A3883 /* EZIAPReceiptValidationResponse.swift */; };
-		5D1D1E802146FA40003A3883 /* EZIAPReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D1E7F2146FA40003A3883 /* EZIAPReceipt.swift */; };
-		5D1D1E822146FA5A003A3883 /* EZIAPLatestReceiptInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D1E812146FA5A003A3883 /* EZIAPLatestReceiptInfo.swift */; };
+		5D1D1E7E2146E959003A3883 /* ReceiptValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D1E7D2146E959003A3883 /* ReceiptValidationResponse.swift */; };
+		5D1D1E802146FA40003A3883 /* SubscriptionReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D1E7F2146FA40003A3883 /* SubscriptionReceipt.swift */; };
+		5D1D1E822146FA5A003A3883 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D1E812146FA5A003A3883 /* Subscription.swift */; };
 		5DDC5AFB211A21310061A0C6 /* DynamicProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDC5AFA211A21310061A0C6 /* DynamicProductsViewModel.swift */; };
 		5DDC5AFE211A22590061A0C6 /* MyProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDC5AFD211A22590061A0C6 /* MyProduct.swift */; };
 		5DDC5B01211A2B140061A0C6 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDC5B00211A2B140061A0C6 /* Product.swift */; };
@@ -46,6 +46,9 @@
 		E17F6AA12116115D00F1010B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E17F6AA02116115D00F1010B /* Assets.xcassets */; };
 		E17F6AA42116115D00F1010B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17F6AA22116115D00F1010B /* LaunchScreen.storyboard */; };
 		E17F6AB52116132D00F1010B /* DemoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F6AB42116132D00F1010B /* DemoStore.swift */; };
+		E1C1DAAF214987C600977C69 /* PendingRenewalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C1DAAE214987C600977C69 /* PendingRenewalInfo.swift */; };
+		E1C1DAB321499A2400977C69 /* ReceiptValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C1DAB221499A2400977C69 /* ReceiptValidationError.swift */; };
+		E1C1DAB621499DF800977C69 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C1DAB521499DF800977C69 /* ServiceLocator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,9 +90,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5D1D1E7D2146E959003A3883 /* EZIAPReceiptValidationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EZIAPReceiptValidationResponse.swift; sourceTree = "<group>"; };
-		5D1D1E7F2146FA40003A3883 /* EZIAPReceipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EZIAPReceipt.swift; sourceTree = "<group>"; };
-		5D1D1E812146FA5A003A3883 /* EZIAPLatestReceiptInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EZIAPLatestReceiptInfo.swift; sourceTree = "<group>"; };
+		5D1D1E7D2146E959003A3883 /* ReceiptValidationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptValidationResponse.swift; sourceTree = "<group>"; };
+		5D1D1E7F2146FA40003A3883 /* SubscriptionReceipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionReceipt.swift; sourceTree = "<group>"; };
+		5D1D1E812146FA5A003A3883 /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
 		5DDC5AEF211A184F0061A0C6 /* ItcProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItcProduct.swift; sourceTree = "<group>"; };
 		5DDC5AFA211A21310061A0C6 /* DynamicProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicProductsViewModel.swift; sourceTree = "<group>"; };
 		5DDC5AFD211A22590061A0C6 /* MyProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProduct.swift; sourceTree = "<group>"; };
@@ -129,6 +132,9 @@
 		E17F6AB42116132D00F1010B /* DemoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoStore.swift; sourceTree = "<group>"; };
 		E17F6AB6211614E800F1010B /* PurchaseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseError.swift; sourceTree = "<group>"; };
 		E17F6ABE2116C44A00F1010B /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		E1C1DAAE214987C600977C69 /* PendingRenewalInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingRenewalInfo.swift; sourceTree = "<group>"; };
+		E1C1DAB221499A2400977C69 /* ReceiptValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptValidationError.swift; sourceTree = "<group>"; };
+		E1C1DAB521499DF800977C69 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +175,7 @@
 		5DDC5AEC211A182F0061A0C6 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				E1C1DAB0214993A600977C69 /* ReceiptValidation */,
 				5DDC5BA3211A71380061A0C6 /* GeneralStore */,
 				E17F6AAB2116116B00F1010B /* iTunesStore */,
 			);
@@ -318,13 +325,6 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		E15AA2622145A35000D5AB26 /* AppStoreService */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AppStoreService;
-			sourceTree = "<group>";
-		};
 		E17F6A8D2116115A00F1010B = {
 			isa = PBXGroup;
 			children = (
@@ -348,7 +348,7 @@
 		E17F6A982116115A00F1010B /* iap_test */ = {
 			isa = PBXGroup;
 			children = (
-				E15AA2622145A35000D5AB26 /* AppStoreService */,
+				E1C1DAB421499DE600977C69 /* ServiceLocator */,
 				5DDC5AEB211A18260061A0C6 /* DemoStore */,
 				5DDC5B1C211A43240061A0C6 /* Extensions */,
 				5DDC5B02211A2B930061A0C6 /* FauxAPI */,
@@ -371,7 +371,6 @@
 				E17F6AAE2116116B00F1010B /* iTunesStore.swift */,
 				E17F6AB92116C1B800F1010B /* Protocols */,
 				E17F6AB82116C1A300F1010B /* Model */,
-				E15AA2632145AEAD00D5AB26 /* ReceiptValidator.swift */,
 			);
 			path = iTunesStore;
 			sourceTree = "<group>";
@@ -379,9 +378,6 @@
 		E17F6AB82116C1A300F1010B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5D1D1E7D2146E959003A3883 /* EZIAPReceiptValidationResponse.swift */,
-				5D1D1E812146FA5A003A3883 /* EZIAPLatestReceiptInfo.swift */,
-				5D1D1E7F2146FA40003A3883 /* EZIAPReceipt.swift */,
 				E17F6AB22116117800F1010B /* PurchaseStatus.swift */,
 				E17F6AB6211614E800F1010B /* PurchaseError.swift */,
 			);
@@ -396,6 +392,35 @@
 				E17F6ABE2116C44A00F1010B /* Store.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E1C1DAB0214993A600977C69 /* ReceiptValidation */ = {
+			isa = PBXGroup;
+			children = (
+				E15AA2632145AEAD00D5AB26 /* ReceiptValidator.swift */,
+				E1C1DAB1214993AC00977C69 /* Model */,
+			);
+			path = ReceiptValidation;
+			sourceTree = "<group>";
+		};
+		E1C1DAB1214993AC00977C69 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D1D1E7D2146E959003A3883 /* ReceiptValidationResponse.swift */,
+				E1C1DAAE214987C600977C69 /* PendingRenewalInfo.swift */,
+				5D1D1E812146FA5A003A3883 /* Subscription.swift */,
+				5D1D1E7F2146FA40003A3883 /* SubscriptionReceipt.swift */,
+				E1C1DAB221499A2400977C69 /* ReceiptValidationError.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E1C1DAB421499DE600977C69 /* ServiceLocator */ = {
+			isa = PBXGroup;
+			children = (
+				E1C1DAB521499DF800977C69 /* ServiceLocator.swift */,
+			);
+			path = ServiceLocator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -546,16 +571,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DDC5B4D211A549E0061A0C6 /* iTunesStatusUpdateReceiver.swift in Sources */,
-				5D1D1E7E2146E959003A3883 /* EZIAPReceiptValidationResponse.swift in Sources */,
+				5D1D1E7E2146E959003A3883 /* ReceiptValidationResponse.swift in Sources */,
 				5DDC5B4F211A54A60061A0C6 /* IAPObserver.swift in Sources */,
 				5DDC5B4C211A549A0061A0C6 /* ItcProduct.swift in Sources */,
-				5D1D1E802146FA40003A3883 /* EZIAPReceipt.swift in Sources */,
+				E1C1DAAF214987C600977C69 /* PendingRenewalInfo.swift in Sources */,
+				5D1D1E802146FA40003A3883 /* SubscriptionReceipt.swift in Sources */,
 				5DDC5B4B211A54970061A0C6 /* Store.swift in Sources */,
 				E15AA2642145AEAD00D5AB26 /* ReceiptValidator.swift in Sources */,
 				5DDC5B4A211A54930061A0C6 /* PurchaseStatus.swift in Sources */,
 				5DDC5B49211A54900061A0C6 /* PurchaseError.swift in Sources */,
-				5D1D1E822146FA5A003A3883 /* EZIAPLatestReceiptInfo.swift in Sources */,
+				5D1D1E822146FA5A003A3883 /* Subscription.swift in Sources */,
 				5DDC5B4E211A54A20061A0C6 /* iTunesStore.swift in Sources */,
+				E1C1DAB321499A2400977C69 /* ReceiptValidationError.swift in Sources */,
 				5DDC5BA5211A71760061A0C6 /* GeneralStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -587,6 +614,7 @@
 				5DDC5B0D211A3C100061A0C6 /* StaticProductsViewModel.swift in Sources */,
 				5DDC5B0B211A32D30061A0C6 /* DemoProductTableViewCell.swift in Sources */,
 				5DDC5AFB211A21310061A0C6 /* DynamicProductsViewModel.swift in Sources */,
+				E1C1DAB621499DF800977C69 /* ServiceLocator.swift in Sources */,
 				E17F6A9A2116115A00F1010B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

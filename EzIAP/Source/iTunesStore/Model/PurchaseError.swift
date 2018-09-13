@@ -33,9 +33,9 @@ public enum PurchaseError: Error {
     public var description: String {
         switch self {
         case .productNotFound:
-            return "No products found for the requested product ID."
+            return "No products found with the requested product identifier."
         case .unableToPurchase:
-            return "Unable to make purchases. Check to make sure you are signed into a valid itunes account and that you are allowed to make purchases."
+            return "Unable to make purchases."
         }
     }
     
@@ -58,7 +58,7 @@ public enum PurchaseError: Error {
     public var recoverySuggestion: String {
         switch self {
         case .productNotFound:
-            return "Try again later."
+            return "Please try again later."
         case .unableToPurchase:
             return "Check to make sure you are signed into a valid itunes account and that you are allowed to make purchases."
         }

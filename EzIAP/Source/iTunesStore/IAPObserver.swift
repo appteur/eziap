@@ -54,19 +54,19 @@ class IAPObserver: NSObject, SKPaymentTransactionObserver {
                 case .purchased:
                     // Notify purchase complete status
                     delegate?.purchaseStatusDidUpdate(PurchaseStatus.init(state: .complete, error: nil, transaction: transaction, message: "Purchase Complete."))
-                    SKPaymentQueue.default().finishTransaction(transaction)
+                    queue.finishTransaction(transaction)
                 
                 // Transaction was cancelled or failed before being added to the server queue
                 case .failed:
                     // An error occured, notify
                     delegate?.purchaseStatusDidUpdate(PurchaseStatus.init(state: .failed, error: transaction.error, transaction: transaction, message: "An error occured."))
-                    SKPaymentQueue.default().finishTransaction(transaction)
+                    queue.finishTransaction(transaction)
                 
-                // transaction was rewtored from the users purchase history. Complete transaction now.
+                // transaction was restored from the users purchase history. Complete transaction now.
                 case .restored:
                     // notify purchase completed with status... success
                     delegate?.restoreStatusDidUpdate(PurchaseStatus.init(state: .complete, error: nil, transaction: transaction, message: "Restore Success!"))
-                    SKPaymentQueue.default().finishTransaction(transaction)
+                    queue.finishTransaction(transaction)
                 
                 // transaction is in the queue, but it's final status is pending user/external action
                 case .deferred:
@@ -87,7 +87,7 @@ class IAPObserver: NSObject, SKPaymentTransactionObserver {
             // Queue does not include any transactions, so either user has not yet made a purchase
             // or the user's prior purchase is unavailable, so notify app (and user) accordingly.
             
-            print("restore queue.transaction.count === 0")
+            print("restore queue.transaction.count == 0")
             return
         }
         
@@ -96,7 +96,7 @@ class IAPObserver: NSObject, SKPaymentTransactionObserver {
             
             // TODO: provide content access here??
             print("Product restored with id: \(String(describing: transaction.original?.payment.productIdentifier))")
-            SKPaymentQueue.default().finishTransaction(transaction)
+            queue.finishTransaction(transaction)
         }
     }
     

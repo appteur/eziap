@@ -56,7 +56,7 @@ open class iTunesStore: NSObject, SKProductsRequestDelegate {
     /// - Parameter identifiers: A Set of product identifiers to validate with the App Store.
     func validateProducts(identifiers: Set<String>) {
         print("Validating products: \(identifiers)")
-        let request:SKProductsRequest = SKProductsRequest.init(productIdentifiers: identifiers)
+        let request = SKProductsRequest.init(productIdentifiers: identifiers)
         request.delegate = self
         request.start()
     }
@@ -121,7 +121,7 @@ open class iTunesStore: NSObject, SKProductsRequestDelegate {
     
 }
 
-// Receives purchase status notifications and forwards them to this classes delegate
+// Receives purchase status notifications from the transaction observer (iAPObserver class) and forwards them to the delegate
 extension iTunesStore: iTunesPurchaseStatusReceiver {
     
     /// Delegate callback from the observer regarding purchase transaction status.
@@ -151,6 +151,11 @@ extension iTunesStore {
         // set received products as our available products
         availableProducts = response.products
         
+        // call delegate with available products.
+        // (do this first so any invalid products can be pruned from this
+        // list when the delegate receives the callback about invalid products below)
+        delegate?.didValidateProducts(availableProducts)
+        
         // set invalid product identifiers
         invalidProductIDs = response.invalidProductIdentifiers
         
@@ -162,8 +167,5 @@ extension iTunesStore {
             // call delegate if we received any invalid identifiers
             delegate?.didReceiveInvalidProductIdentifiers(invalidProductIDs)
         }
-        
-        // call delegate with available products.
-        delegate?.didValidateProducts(availableProducts)
     }
 }
